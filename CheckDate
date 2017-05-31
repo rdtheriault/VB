@@ -1,11 +1,19 @@
-Dim rng As Range, cell As Range
+Sub CheckDate()
 
-Set rng = Range("D2:AB693")
+
+Dim rng As Range, cell As Range
+Dim msg As String
+
+Set rng = Range("D2:AB611")
 
 For Each cell In rng
-
-  If (IsDate(cell)) Then  
-    msg = msg + " " + cell
+  If Not (IsDate(cell.Value)) Then
+    msg = msg + " " + cell.Address    
+  End If
 Next cell
-  
+
 MsgBox msg
+
+
+End Sub
+
