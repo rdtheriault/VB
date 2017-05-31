@@ -1,0 +1,11 @@
+Dim rng As Range, cell As Range
+
+Set rng = Range("D2:AB693")
+
+For Each cell In rng
+
+  If (IsDate(cell)) Then  
+    msg = msg + " " + cell
+Next cell
+  
+MsgBox msg
